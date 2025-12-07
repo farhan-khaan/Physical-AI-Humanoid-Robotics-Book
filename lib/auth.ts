@@ -1,0 +1,59 @@
+import { betterAuth } from "better-auth";
+import { prismaAdapter } from "better-auth/adapters/prisma";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+export const auth = betterAuth({
+  database: prismaAdapter(prisma, {
+    provider: "postgresql", // or "mysql", "sqlite"
+  }),
+  emailAndPassword: {
+    enabled: true,
+  },
+  socialProviders: {
+    google: {
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    },
+    github: {
+      clientId: process.env.GITHUB_CLIENT_ID as string,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+    },
+  },
+  // Custom user fields for personalization
+  user: {
+    additionalFields: {
+      softwareBackground: {
+        type: "string",
+        required: false,
+      },
+      hardwareBackground: {
+        type: "string",
+        required: false,
+      },
+      experienceLevel: {
+        type: "string",
+        required: false,
+      },
+      programmingLanguages: {
+        type: "string", // JSON string array
+        required: false,
+      },
+      roboticsExperience: {
+        type: "string",
+        required: false,
+      },
+      learningGoals: {
+        type: "string", // JSON string array
+        required: false,
+      },
+      preferredLanguage: {
+        type: "string",
+        defaultValue: "en",
+      },
+    },
+  },
+});
+
+export type Session = typeof auth.$Infer.Session;

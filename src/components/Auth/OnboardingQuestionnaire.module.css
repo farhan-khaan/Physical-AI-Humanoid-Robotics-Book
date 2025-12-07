@@ -1,0 +1,214 @@
+.questionnaire {
+  padding: 24px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  text-align: center;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.header p {
+  font-size: 14px;
+  color: var(--ifm-color-emphasis-700);
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.progress {
+  height: 6px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  transition: width 0.3s ease-out;
+}
+
+.stepIndicator {
+  text-align: center;
+  font-size: 13px;
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 600;
+}
+
+.questionContainer {
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.question h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  color: var(--ifm-color-emphasis-900);
+  text-align: center;
+}
+
+.hint {
+  display: block;
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+.options button {
+  padding: 20px;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.options button:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.options button.selected {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-lightest);
+  box-shadow: 0 0 0 3px var(--ifm-color-primary-lightest);
+}
+
+.emoji {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.options button strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.options button small {
+  font-size: 13px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.checkboxGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--ifm-background-surface-color);
+}
+
+.checkbox:hover {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-lightest);
+}
+
+.checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--ifm-color-primary);
+}
+
+.checkbox input[type="checkbox"]:checked + span {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+.checkbox span {
+  font-size: 14px;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.backButton,
+.nextButton {
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.backButton {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+}
+
+.backButton:hover {
+  background: var(--ifm-color-emphasis-300);
+}
+
+.nextButton {
+  background: var(--ifm-color-primary);
+  color: white;
+  flex: 1;
+}
+
+.nextButton:hover:not(:disabled) {
+  background: var(--ifm-color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nextButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .checkboxGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .emoji {
+    font-size: 24px;
+  }
+  
+  .questionnaire {
+    padding: 16px;
+  }
+}
