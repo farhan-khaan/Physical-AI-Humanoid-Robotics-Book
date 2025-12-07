@@ -23,6 +23,11 @@ function HomepageHeader() {
             to="/docs/intro">
             AI-Robotic Tutorial - 5min ⏱️
           </Link>
+          <Link
+            className="button button--outline button--secondary button--lg"
+            to="https://github.com/farhan-khaan/Physical-AI-Humanoid-Robotics-Book">
+            GitHub ⭐
+          </Link>
         </div>
       </div>
     </header>
