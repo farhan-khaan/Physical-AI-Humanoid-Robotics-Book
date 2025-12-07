@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 export default function Root({ children }) {
   useEffect(() => {
@@ -16,6 +17,7 @@ export default function Root({ children }) {
   return (
     <>
       {children}
+      <SpeedInsights />
       <div id="chatbot"></div>
     </>
   );
