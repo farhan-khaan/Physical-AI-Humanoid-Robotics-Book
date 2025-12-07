@@ -35,16 +35,16 @@ By the end of this section, you will be able to:
 
 ### The PID Equation
 
-$$
-u(t) = K_p \cdot e(t) + K_i \int_0^t e(\tau) d\tau + K_d \frac{de(t)}{dt}
-$$
+```
+u(t) = Kp * e(t) + Ki * ∫e(τ)dτ + Kd * de(t)/dt
+```
 
 Where:
-- $u(t)$ = control output
-- $e(t)$ = error (desired - actual)
-- $K_p$ = proportional gain
-- $K_i$ = integral gain
-- $K_d$ = derivative gain
+- `u(t)` = control output
+- `e(t)` = error (desired - actual)
+- `Kp` = proportional gain
+- `Ki` = integral gain
+- `Kd` = derivative gain
 
 ### Understanding Each Term
 
@@ -567,16 +567,17 @@ Impedance control makes robots compliant, allowing safe interaction with environ
 
 Instead of controlling position directly, control the relationship between force and motion:
 
-$$
-F = K(x_d - x) + B(\dot{x}_d - \dot{x})
-$$
+```
+F = K(x_desired - x) + B(v_desired - v)
+```
 
 Where:
-- $F$ = applied force
-- $K$ = virtual stiffness
-- $B$ = virtual damping
-- $x_d$ = desired position
-- $x$ = actual position
+- `F` = applied force
+- `K` = virtual stiffness
+- `B` = virtual damping
+- `x_desired` = desired position
+- `x` = actual position
+- `v` = velocity
 
 ```python
 class ImpedanceController:
