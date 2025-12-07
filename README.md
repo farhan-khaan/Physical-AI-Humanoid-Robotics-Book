@@ -65,6 +65,44 @@ npm run build
 npm run serve
 ```
 
+## 🤖 RAG Chatbot Setup
+
+The book includes an AI-powered chatbot that can answer questions about the content using Retrieval-Augmented Generation (RAG).
+
+### Quick Setup (15 minutes)
+
+See **[QUICK-START-CHATBOT.md](QUICK-START-CHATBOT.md)** for a 15-minute setup guide.
+
+### Full Setup Guide
+
+See **[CHATBOT-SETUP-GUIDE.md](CHATBOT-SETUP-GUIDE.md)** for comprehensive deployment instructions.
+
+### Features
+
+- 💬 Ask questions about any chapter
+- ✂️ Select text and get instant explanations
+- 📚 Automatic source citations
+- 💾 Conversation history saved to database
+- 🎯 Chapter-aware context filtering
+- 🔐 User authentication integration
+
+### Test the Chatbot
+
+```bash
+# Start backend
+cd backend
+python rag_chatbot.py
+
+# In another terminal, embed content
+cd backend
+python embed_all_content.py
+
+# In another terminal, start frontend
+npm start
+```
+
+Open http://localhost:3000 and click the chatbot icon (bottom right)!
+
 ## 📊 Content Statistics
 
 - **📄 Pages**: 29 comprehensive chapters
@@ -76,10 +114,18 @@ npm run serve
 
 ## 🛠️ Technologies Used
 
+### Frontend
 - **Framework**: [Docusaurus](https://docusaurus.io/)
 - **Language**: TypeScript, React
 - **Deployment**: Vercel
-- **Version Control**: Git
+- **Authentication**: Better Auth (Google/GitHub OAuth)
+
+### Backend (RAG Chatbot)
+- **API**: FastAPI (Python)
+- **AI**: OpenAI GPT-4o-mini, text-embedding-3-small
+- **Vector DB**: Qdrant Cloud (Free Tier)
+- **Database**: Neon Serverless Postgres
+- **Deployment**: Render.com / Docker
 
 ## 🎓 Learning Path
 
@@ -101,6 +147,10 @@ Week 10+  → Chapter 5: Capstone Project
 - ✅ **Progressive Learning** from basics to advanced
 - ✅ **Hands-on Exercises** with solutions
 - ✅ **Real-world Projects** with detailed guidance
+- ✅ **🤖 AI-Powered RAG Chatbot** - Ask questions about book content
+- ✅ **Selected Text Queries** - Highlight text and ask for explanations
+- ✅ **User Authentication** - Google/GitHub OAuth integration
+- ✅ **Content Personalization** - Tailored learning experiences
 
 ## 🤝 Contributing
 
