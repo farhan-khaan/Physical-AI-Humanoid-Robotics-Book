@@ -6,8 +6,14 @@ sidebar_position: 2
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ChapterActions from '@site/src/components/ChapterActions';
 
 # Sensor Types
+
+<ChapterActions 
+  chapterId="02-sensors-actuators-sensor-types" 
+  chapterTitle="Sensor Types"
+/>
 
 Sensors are the robot's window to the world. They provide the raw data that enables perception, state estimation, and decision-making. In this section, we'll explore the wide variety of sensors used in humanoid robotics.
 
