@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 export default function Root({ children }) {
   useEffect(() => {
+    // Initialize Vercel Speed Insights
+    injectSpeedInsights();
+
+    // Initialize ChatKit
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/chatkit-sdk';
     script.onload = () => {
