@@ -1,10 +1,7 @@
 from fastapi import FastAPI, Request
 from openai import OpenAI
 from qdrant_client import QdrantClient
-from dotenv import load_dotenv
 import os
-
-load_dotenv()
 
 app = FastAPI()
 
